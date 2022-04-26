@@ -2,15 +2,8 @@
 	import Quiz from "./Quiz.svelte";
 </script>
 
-<style>
-	:global(h4) {
-		color: green;
-	}
-</style>
-
-
-<h4>I'm an h4</h4>
+<h1>Level Up Quiz</h1>
 
 <main>
-	<Quiz quizName = "New Quiz" />
+	<Quiz />
 </main>
