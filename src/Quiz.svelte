@@ -1,9 +1,22 @@
 <script>
     import { fade, blur, fly, slide, scale } from 'svelte/transition';
+    import { onMount, beforeUpdate, afterUpdate, onDestroy } from 'svelte';
     import Question from "./Question.svelte";
     let activeQuestion = 0;
     let score = 0;
     let quiz = getQuiz();
+
+    onMount(() => {
+        console.log("I mounted");
+    });
+
+    beforeUpdate(() => {
+        console.log("Before Update");
+    });
+
+    afterUpdate(() => {
+        console.log("After Update");
+    });
 
     async function getQuiz() {
         const res = await fetch('https://opentdb.com/api.php?amount=10&category=21&type=multiple');
