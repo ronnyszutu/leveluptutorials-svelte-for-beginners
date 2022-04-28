@@ -44,7 +44,7 @@
     }
 
     // Reactive Statement
-    $: if (score > 1) {
+    $: if (score > 0) {
         isModalOpen = true;
     }
 
@@ -81,7 +81,7 @@
 </div>
 
 {#if isModalOpen}
-     <Modal>
+     <Modal on:close={resetQuiz}>
          <h2>You Won!</h2>
          <p>Congratulations</p>
          <button on:click={resetQuiz}>Start Over</button>
